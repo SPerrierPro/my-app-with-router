@@ -22,7 +22,8 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        /* Retourner voir le workshop aussi car loader peut être global, pas inséré ds un élément mais ds l'app*/
+        /* Retourner voir le workshop aussi car loader peut être global, pas inséré ds un élément mais ds l'app
+        Permet de charger bcp de data en amont pour améliorer les perf de l'app*/
         loader: () => {
           return getWeatherOfTheDay();
       },
