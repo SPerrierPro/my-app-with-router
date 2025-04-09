@@ -11,6 +11,10 @@ import Article from "./pages/Article";
 
 // router creation
 
+const getWeatherOfTheDay = () => {
+  return "sunny";
+};
+
 const router = createBrowserRouter([
   {
     element: <App />,
@@ -18,7 +22,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+        /* Retourner voir le workshop aussi car loader peut être global, pas inséré ds un élément mais ds l'app*/
+        loader: () => {
+          return getWeatherOfTheDay();
       },
+    },
       {
         path: "/about",
         element: <About />,
